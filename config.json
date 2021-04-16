@@ -1,0 +1,8 @@
+{
+  "modelPackage": "com.atlassian.jira.rest.client.v2.model",
+  "apiPackage": "com.atlassian.jira.rest.client.v2.api",
+  "invokerPackage": "com.atlassian.jira.rest.v2.client",
+  "library": "webclient",
+  "groupId": "com.atlassian.jira.rest.v2",
+  "artifactId": "client"
+}
