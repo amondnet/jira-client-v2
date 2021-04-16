@@ -7,7 +7,6 @@ import com.atlassian.jira.rest.client.v2.model.User;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.stream.Collectors;
 

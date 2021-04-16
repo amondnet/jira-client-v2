@@ -1,5 +1,6 @@
 apply plugin: 'idea'
 apply plugin: 'eclipse'
+apply plugin: 'maven-publish'
 
 group = 'com.atlassian.jira.rest.v2'
 version = '1001.0.0-SNAPSHOT'
@@ -138,4 +139,20 @@ dependencies {
     implementation "javax.annotation:javax.annotation-api:$javax_annotation_version"
     testImplementation "junit:junit:$junit_version"
 }
-
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/amondnet/jira-client")
+            credentials {
+                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+                password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
+            }
+        }
+    }
+    publications {
+        gpr(MavenPublication) {
+            from(components.java)
+        }
+    }
+}
